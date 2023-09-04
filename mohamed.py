@@ -10,7 +10,7 @@ my_skills = [("Html", 80), ("CSS", 75), ("Python", 95), ("MySQL", 45)]
 
 @skills_app.route("/index")
 def homepage():
-  return render_template("homepage.html",
+  return render_template("index.html",
                           title="Homepage",
                           custom_css="home")
 
@@ -24,14 +24,14 @@ def homepage():
 # def about():
 #   return render_template("about.html", title="About Us")
 
-# @skills_app.route("/")
-# def skills():
-#   return render_template("skills.html",
-#                           title="My Skills",
-#                           page_head="My Skills",
-#                           description="This Is My Skills Page",
-#                           skills=my_skills,
-#                           custom_css="skills")
+@skills_app.route("/")
+def skills():
+  return render_template("skills.html",
+                          title="My Skills",
+                          page_head="My Skills",
+                          description="This Is My Skills Page",
+                          skills=my_skills,
+                          custom_css="skills")
 
 if __name__ == "__main__":
-  skills_app.run(debug=True, port=9000)
+  skills_app.run(debug=True, port=8080)
