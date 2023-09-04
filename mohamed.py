@@ -8,7 +8,7 @@ skills_app = Flask(__name__)
 
 my_skills = [("Html", 80), ("CSS", 75), ("Python", 95), ("MySQL", 45)]
 
-@skills_app.route("\index")
+@skills_app.route("index")
 def homepage():
   return render_template("homepage.html",
                           title="Homepage",
